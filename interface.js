@@ -8,29 +8,26 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function handleClick(event) {
+
     let square = event.target;
     let position = square.id;
+
     if (handleMove(position)) {
 
-        setTimeout(function () {
-            alert('O jogo acabou');
-        },500)
+        setTimeout(() => {
+            alert('O jogo acabou')
+        },100);
 
-    };
-
-
-    updateSqueres();
+    }
+    
+    updateSquare(position);
 }
 
-function updateSqueres() {
-    let squares = document.querySelectorAll('.square');
+function updateSquare(id){
+    let square = document.getElementById(id.toString())
+    let symbol = board[id];
+    if (symbol != '') {
+        square.innerHTML = `<div class='${symbol}'></div>`;
+    }
 
-    squares.forEach((square) => {
-        let position = square.id;
-        let symbol = board[position];
-
-        if (symbol != '') {
-            square.innerHTML = `<div class='${symbol}'></div>`;
-        }
-    });
 }
