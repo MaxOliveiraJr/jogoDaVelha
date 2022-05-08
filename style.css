@@ -31,3 +31,10 @@ h1{
     line-height: 100px;
     transform: translateX(-50%);
 }
+
+button{
+    background-color: aqua;
+    border: none;
+    height: 40px;
+    border-radius: 20px ;
+}
